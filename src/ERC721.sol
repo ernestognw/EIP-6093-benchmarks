@@ -3,17 +3,24 @@ pragma solidity ^0.8.13;
 
 import {IERC721Base} from "./interfaces/IERC721Base.sol";
 
-contract ERC721RevertString is IERC721Base {
-    function checkError(address a, uint256 b, address c) external pure returns (uint256 o) {
-        o = uint160(a) + b + uint160(c);
-        require(false, "This will always revert");
-    }
-}
-
-contract ERC721EmptyString is IERC721Base {
+contract ERC721RevertStringEmpty is IERC721Base {
     function checkError(address a, uint256 b, address c) external pure returns (uint256 o) {
         o = uint160(a) + b + uint160(c);
         require(false, "");
+    }
+}
+
+contract ERC721RevertStringShort is IERC721Base {
+    function checkError(address a, uint256 b, address c) external pure returns (uint256 o) {
+        o = uint160(a) + b + uint160(c);
+        require(false, "short string");
+    }
+}
+
+contract ERC721RevertStringLong is IERC721Base {
+    function checkError(address a, uint256 b, address c) external pure returns (uint256 o) {
+        o = uint160(a) + b + uint160(c);
+        require(false, "a very long string that will use more space to store and should cost more");
     }
 }
 

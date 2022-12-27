@@ -5,16 +5,22 @@ import "forge-std/Test.sol";
 import "../src/ERC721.sol";
 
 contract ERC721Test is Test {
-    function testERC721RevertString(address a, uint256 b, address c) public {
-        ERC721RevertString revertString = new ERC721RevertString();
+    function testERC721RevertStringEmpty(address a, uint256 b, address c) public {
+        ERC721RevertStringEmpty revertStringEmpty = new ERC721RevertStringEmpty();
         vm.expectRevert();
-        revertString.checkError(a, b, c);
+        revertStringEmpty.checkError(a, b, c);
     }
 
-    function testERC721EmptyString(address a, uint256 b, address c) public {
-        ERC721EmptyString emptyString = new ERC721EmptyString();
+    function testERC721RevertStringShort(address a, uint256 b, address c) public {
+        ERC721RevertStringShort revertStringShort = new ERC721RevertStringShort();
         vm.expectRevert();
-        emptyString.checkError(a, b, c);
+        revertStringShort.checkError(a, b, c);
+    }
+
+    function testERC721RevertStringLong(address a, uint256 b, address c) public {
+        ERC721RevertStringLong revertStringLong = new ERC721RevertStringLong();
+        vm.expectRevert();
+        revertStringLong.checkError(a, b, c);
     }
 
     function testERC721InvalidOwner(address a, uint256 b, address c) public {

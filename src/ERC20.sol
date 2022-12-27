@@ -3,17 +3,24 @@ pragma solidity ^0.8.13;
 
 import {IERC20Base} from "./interfaces/IERC20Base.sol";
 
-contract ERC20RevertString is IERC20Base {
-    function checkError(address a, uint256 b, uint256 c) external pure returns (uint256 o) {
-        o = uint160(a) + b + c;
-        require(false, "This will always revert");
-    }
-}
-
-contract ERC20EmptyString is IERC20Base {
+contract ERC20RevertStringEmpty is IERC20Base {
     function checkError(address a, uint256 b, uint256 c) external pure returns (uint256 o) {
         o = uint160(a) + b + c;
         require(false, "");
+    }
+}
+
+contract ERC20RevertStringShort is IERC20Base {
+    function checkError(address a, uint256 b, uint256 c) external pure returns (uint256 o) {
+        o = uint160(a) + b + c;
+        require(false, "short string");
+    }
+}
+
+contract ERC20RevertStringLong is IERC20Base {
+    function checkError(address a, uint256 b, uint256 c) external pure returns (uint256 o) {
+        o = uint160(a) + b + c;
+        require(false, "a very long string that will use more space to store and should cost more");
     }
 }
 

@@ -5,16 +5,22 @@ import "forge-std/Test.sol";
 import "../src/ERC20.sol";
 
 contract ERC20Test is Test {
-    function testERC20RevertString(address a, uint256 b, uint256 c) public {
-        ERC20RevertString revertString = new ERC20RevertString();
+    function testERC20RevertStringEmpty(address a, uint256 b, uint256 c) public {
+        ERC20RevertStringEmpty revertStringEmpty = new ERC20RevertStringEmpty();
         vm.expectRevert();
-        revertString.checkError(a, b, c);
+        revertStringEmpty.checkError(a, b, c);
     }
 
-    function testERC20EmptyString(address a, uint256 b, uint256 c) public {
-        ERC20EmptyString emptyString = new ERC20EmptyString();
+    function testERC20RevertStringShort(address a, uint256 b, uint256 c) public {
+        ERC20RevertStringShort revertStringShort = new ERC20RevertStringShort();
         vm.expectRevert();
-        emptyString.checkError(a, b, c);
+        revertStringShort.checkError(a, b, c);
+    }
+
+    function testERC20RevertStringLong(address a, uint256 b, uint256 c) public {
+        ERC20RevertStringLong revertStringLong = new ERC20RevertStringLong();
+        vm.expectRevert();
+        revertStringLong.checkError(a, b, c);
     }
 
     function testERC20InsufficientBalance(address a, uint256 b, uint256 c) public {

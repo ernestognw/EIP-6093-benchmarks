@@ -3,17 +3,24 @@ pragma solidity ^0.8.13;
 
 import {IERC1155Base} from "./interfaces/IERC1155Base.sol";
 
-contract ERC1155RevertString is IERC1155Base {
-    function checkError(address a, uint256 b, uint256 c, uint256 d) external pure returns (uint256 o) {
-        o = uint160(a) + b + c + d;
-        require(false, "This will always revert");
-    }
-}
-
-contract ERC1155EmptyString is IERC1155Base {
+contract ERC1155RevertStringEmpty is IERC1155Base {
     function checkError(address a, uint256 b, uint256 c, uint256 d) external pure returns (uint256 o) {
         o = uint160(a) + b + c + d;
         require(false, "");
+    }
+}
+
+contract ERC1155RevertStringShort is IERC1155Base {
+    function checkError(address a, uint256 b, uint256 c, uint256 d) external pure returns (uint256 o) {
+        o = uint160(a) + b + c + d;
+        require(false, "short string");
+    }
+}
+
+contract ERC1155RevertStringLong is IERC1155Base {
+    function checkError(address a, uint256 b, uint256 c, uint256 d) external pure returns (uint256 o) {
+        o = uint160(a) + b + c + d;
+        require(false, "a very long string that will use more space to store and should cost more");
     }
 }
 
