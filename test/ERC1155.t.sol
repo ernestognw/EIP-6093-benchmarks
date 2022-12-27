@@ -5,6 +5,12 @@ import "forge-std/Test.sol";
 import "../src/ERC1155.sol";
 
 contract ERC1155Test is Test {
+    function testERC1155RevertBaseline(address a, uint256 b, uint256 c, uint256 d) public {
+        ERC1155RevertBaseline revertBaseline = new ERC1155RevertBaseline();
+        vm.expectRevert();
+        revertBaseline.checkError(a, b, c, d);
+    }
+
     function testERC1155RevertStringEmpty(address a, uint256 b, uint256 c, uint256 d) public {
         ERC1155RevertStringEmpty revertStringEmpty = new ERC1155RevertStringEmpty();
         vm.expectRevert();

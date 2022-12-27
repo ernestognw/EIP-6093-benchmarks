@@ -5,6 +5,12 @@ import "forge-std/Test.sol";
 import "../src/ERC20.sol";
 
 contract ERC20Test is Test {
+    function testERC20RevertBaseline(address a, uint256 b, uint256 c) public {
+        ERC20RevertBaseline revertBaseline = new ERC20RevertBaseline();
+        vm.expectRevert();
+        revertBaseline.checkError(a, b, c);
+    }
+    
     function testERC20RevertStringEmpty(address a, uint256 b, uint256 c) public {
         ERC20RevertStringEmpty revertStringEmpty = new ERC20RevertStringEmpty();
         vm.expectRevert();

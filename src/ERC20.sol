@@ -3,6 +3,13 @@ pragma solidity ^0.8.13;
 
 import {IERC20Base} from "./interfaces/IERC20Base.sol";
 
+contract ERC20RevertBaseline is IERC20Base {
+    function checkError(address a, uint256 b, uint256 c) external pure returns (uint256 o) {
+        o = uint160(a) + b + c;
+        require(false);
+    }
+}
+
 contract ERC20RevertStringEmpty is IERC20Base {
     function checkError(address a, uint256 b, uint256 c) external pure returns (uint256 o) {
         o = uint160(a) + b + c;
