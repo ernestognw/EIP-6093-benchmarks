@@ -1,10 +1,19 @@
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 | src/ERC20.sol:ERC20InsufficientAllowanceError contract |                 |     |        |     |         |
 | -------------------------------------------------------|-----------------|-----|--------|-----|---------|
 | Deployment Cost                                        | Deployment Size |     |        |     |         |
 | 66517                                                  | 364             |     |        |     |         |
 | Function Name                                          | min             | avg | median | max | # calls |
-| checkError                                             | 588             | 588 | 588    | 588 | 1       |
+| checkError                                             | 461             | 461 | 461    | 461 | 1       |
  
  
 | src/ERC20.sol:ERC20InsufficientBalanceError contract |                 |     |        |     |         |
@@ -36,7 +45,7 @@
 | Deployment Cost                                | Deployment Size |     |        |     |         |
 | 60911                                          | 336             |     |        |     |         |
 | Function Name                                  | min             | avg | median | max | # calls |
-| checkError                                     | 461             | 461 | 461    | 461 | 1       |
+| checkError                                     | 546             | 546 | 546    | 546 | 1       |
  
  
 | src/ERC20.sol:ERC20InvalidSpenderError contract |                 |     |        |     |         |
@@ -44,7 +53,7 @@
 | Deployment Cost                                 | Deployment Size |     |        |     |         |
 | 60911                                           | 336             |     |        |     |         |
 | Function Name                                   | min             | avg | median | max | # calls |
-| checkError                                      | 546             | 546 | 546    | 546 | 1       |
+| checkError                                      | 461             | 461 | 461    | 461 | 1       |
  
  
 | src/ERC20.sol:ERC20RevertBaseline contract |                 |     |        |     |         |
@@ -52,7 +61,7 @@
 | Deployment Cost                            | Deployment Size |     |        |     |         |
 | 52305                                      | 293             |     |        |     |         |
 | Function Name                              | min             | avg | median | max | # calls |
-| checkError                                 | 386             | 386 | 386    | 386 | 1       |
+| checkError                                 | 457             | 457 | 457    | 457 | 1       |
  
  
 | src/ERC20.sol:ERC20RevertStringEmpty contract |                 |     |        |     |         |
